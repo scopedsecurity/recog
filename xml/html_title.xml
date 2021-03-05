@@ -239,6 +239,21 @@
     <param pos="0" name="os.product" value="Windows"/>
     <param pos="0" name="os.cpe23" value="cpe:/o:microsoft:windows:-"/>
   </fingerprint>
+  
+  <fingerprint pattern="^Outlook Web App$">
+    <description>Outlook Web Access</description>
+    <example>Outlook Web App</example>
+    <param pos="0" name="service.vendor" value="Microsoft"/>
+    <param pos="0" name="service.product" value="Exchange Server"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:microsoft:exchange_server:-"/>
+    <param pos="0" name="service.component.vendor" value="Microsoft"/>
+    <param pos="0" name="service.component.product" value="Outlook Web Access"/>
+    <param pos="0" name="service.component.cpe23" value="cpe:/a:microsoft:outlook_web_access:-"/>
+    <param pos="0" name="os.vendor" value="Microsoft"/>
+    <param pos="0" name="os.family" value="Windows"/>
+    <param pos="0" name="os.product" value="Windows"/>
+    <param pos="0" name="os.cpe23" value="cpe:/o:microsoft:windows:-"/>
+  </fingerprint>
 
   <fingerprint pattern="^(?:NETIASPOT Management Console|Konsola zarzdzania NETIASPOT)$">
     <description>Netia Spot wireless router</description>
