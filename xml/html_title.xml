@@ -331,6 +331,72 @@
     <param pos="0" name="os.device" value="Firewall"/>
     <param pos="0" name="os.family" value="SonicOS"/>
   </fingerprint>
+  
+  <fingerprint pattern="^(Log In - Juniper Web Device Manager|Juniper Networks VPN Client Application)$">
+    <description>Juniper SRX Series Firewall</description>
+    <example>Log In - Juniper Web Device Manager</example>
+    <example>Juniper Networks VPN Client Application</example>
+    <param pos="0" name="hw.vendor" value="Juniper"/>
+    <param pos="0" name="hw.family" value="SRX"/>
+    <param pos="0" name="hw.device" value="Firewall"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Barracuda Networks$">
+    <description>Barracuda Backup</description>
+    <example>Barracuda Networks</example>
+    <param pos="0" name="service.vendor" value="Barracuda"/>
+    <param pos="0" name="service.product" value="Backup"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:barracuda:backup:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Barracuda NextGen Firewall F. Welcome.$">
+    <description>Barracuda NextGen Firewall</description>
+    <example>Barracuda NextGen Firewall F. Welcome.</example>
+    <param pos="0" name="service.vendor" value="Barracuda"/>
+    <param pos="0" name="service.product" value="NextGen Firewall"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:barracuda:nextgen_firewall:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Barracuda Phone System$">
+    <description>Barracuda Phone System</description>
+    <example>Barracuda Phone System</example>
+    <param pos="0" name="service.vendor" value="Barracuda"/>
+    <param pos="0" name="service.product" value="Phone System"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:barracuda:phone_system:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Barracuda Web Application Firewall: Welcome$">
+    <description>Barracuda Web Application Firewall</description>
+    <example>Barracuda Web Application Firewall: Welcome</example>
+    <param pos="0" name="service.vendor" value="Barracuda"/>
+    <param pos="0" name="service.product" value="Web Application Firewall"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:barracuda:web_application_firewall:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Barracuda Link Balancer: Welcome$">
+    <description>Barracuda Link Balancer</description>
+    <example>Barracuda Link Balancer: Welcome</example>
+    <param pos="0" name="service.vendor" value="Barracuda"/>
+    <param pos="0" name="service.product" value="Link Balancer"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:barracuda:link_balancer:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Barracuda Load Balancer: Welcome$">
+    <description>Barracuda Load Balancer ADC</description>
+    <example>Barracuda Load Balancer: Welcome</example>
+    <param pos="0" name="service.vendor" value="Barracuda"/>
+    <param pos="0" name="service.product" value="Load Balancer ADC"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:barracuda:load_balancer_adc:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Barracuda SSL VPN">
+    <description>Barracuda SSL VPN</description>
+    <example>Barracuda SSL VPN: Log In</example>
+    <example>Barracuda SSL VPN: Welcome</example>
+    <param pos="0" name="service.vendor" value="Barracuda"/>
+    <param pos="0" name="service.product" value="SSL VPN"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:barracuda:ssl_vpn:-"/>
+  </fingerprint>
 
   <fingerprint pattern="^(.*).nbsp;-.nbsp;Synology.nbsp;DiskStation$">
     <description>Synology DiskStation</description>
@@ -370,6 +436,14 @@
     <param pos="0" name="hw.vendor" value="Fortinet"/>
     <param pos="0" name="hw.family" value="FortiGate"/>
     <param pos="0" name="hw.device" value="Firewall"/>
+  </fingerprint>
+
+  <fingerprint pattern="^FortiLogger | Log and Report System$">
+    <description>Fortinet FortiLogger</description>
+    <example>FortiLogger | Log and Report System</example>
+    <param pos="0" name="service.vendor" value="FortiLogger"/>
+    <param pos="0" name="os.product" value="FortiLogger"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:fortilogger:fortilogger:-"/>
   </fingerprint>
 
   <!-- Various products by Ubiquiti networks -->
@@ -786,6 +860,34 @@
     <param pos="0" name="hw.product" value="Crosswork SON Appliance"/>
   </fingerprint>
 
+  <fingerprint pattern="^Cisco ASDM ([\S]+)$">
+    <description>Cisco ASDM</description>
+    <example service.version="6.2.5">Cisco ASDM 6.2.5</example>
+    <example service.version="7.12(2)">Cisco ASDM 7.12(2)</example>
+    <param pos="0" name="service.vendor" value="Cisco"/>
+    <param pos="0" name="service.product" value="ASDM"/>
+    <param pos="1" name="service.version"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:cisco:adsm:{service.version}"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Cisco ([\S]+) VPN Router$">
+    <description>Cisco RV Series VPN Router</description>
+    <example hw.version="RV345">Cisco RV345 VPN Router</example>
+    <param pos="0" name="hw.vendor" value="Cisco"/>
+    <param pos="0" name="hw.product" value="RV Series VPN Firewall"/>
+    <param pos="1" name="hw.version"/>
+    <param pos="0" name="service.cpe23" value="cpe:/h:cisco:{hw.version}"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Cisco Email Security Appliance ([\S]+)">
+    <description>Cisco Email Security Appliance</description>
+    <example hw.version="C195">Cisco Email Security Appliance C195 (10.0.0.1) - Welcome</example>
+    <param pos="0" name="hw.vendor" value="Cisco"/>
+    <param pos="0" name="hw.product" value="Email Security Appliance"/>
+    <param pos="1" name="hw.version"/>
+    <param pos="0" name="hw.cpe23" value="cpe:/h:cisco:email_security_appliance:{hw.version}"/>
+  </fingerprint>
+  
   <fingerprint pattern="^HPE Virtual Connect Manager$">
     <description>HPE Virtual Connect Manager</description>
     <example>HPE Virtual Connect Manager</example>
@@ -1549,6 +1651,38 @@
     <param pos="0" name="service.product" value="Horizon"/>
     <param pos="0" name="service.cpe23" value="cpe:/a:vmware:horizon:-"/>
   </fingerprint>
+  
+  <fingerprint pattern="^Welcome to VMware Cloud Director$">
+    <description>VMware Cloud Director</description>
+    <example>Welcome to VMware Cloud Director</example>
+    <param pos="0" name="service.vendor" value="VMware"/>
+    <param pos="0" name="service.product" value="Cloud Director"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:vmware:cloud_director:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^VMware Carbon Black EDR$">
+    <description>VMware Carbon Black EDR</description>
+    <example>VMware Carbon Black EDR</example>
+    <param pos="0" name="service.vendor" value="VMware"/>
+    <param pos="0" name="service.product" value="Carbon Black"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:vmware:carbon_black:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^VMware HCX$">
+    <description>VMware HCX</description>
+    <example>VMware HCX</example>
+    <param pos="0" name="service.vendor" value="VMware"/>
+    <param pos="0" name="service.product" value="HCX"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:vmware:hcx:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="VMware Cloud Director Availability$">
+    <description>VMware Cloud Director Availability</description>
+    <example>Login | VMware Cloud Director Availability</example>
+    <param pos="0" name="service.vendor" value="VMware"/>
+    <param pos="0" name="service.product" value="Cloud Director Availability"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:vmware:cloud_director_availability:-"/>
+  </fingerprint>
 
   <fingerprint pattern="^Welcome to VMware Site Recovery Manager$">
     <description>VMware SRM</description>
@@ -1561,10 +1695,27 @@
     <param pos="0" name="service.vendor" value="VMware"/>
     <param pos="0" name="service.product" value="Site Recovery Manager"/>
   </fingerprint>
+  
+  <fingerprint pattern="^VMware Appliance Manager$">
+    <description>VMware NSX Manager</description>
+    <example>VMware Appliance Manager</example>
+    <param pos="0" name="service.vendor" value="VMware"/>
+    <param pos="0" name="service.product" value="NSX Manager"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:vmware:nsx_manager:-"/>
+  </fingerprint>
 
   <fingerprint pattern="^&quot; \+ ID_VC_Welcome \+ &quot;$">
     <description>VMware vCenter</description>
     <example>&quot; + ID_VC_Welcome + &quot;</example>
+    <param pos="0" name="service.vendor" value="VMware"/>
+    <param pos="0" name="service.product" value="vCenter"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:vmware:vcenter_server:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="VMware vSphere">
+    <description>VMware vCenter vSphere Web Client</description>
+    <example>VMware vSphere Web Client - Page not found</example>
+    <example>Welcome to VMware vSphere</example>
     <param pos="0" name="service.vendor" value="VMware"/>
     <param pos="0" name="service.product" value="vCenter"/>
     <param pos="0" name="service.cpe23" value="cpe:/a:vmware:vcenter_server:-"/>
@@ -1618,6 +1769,115 @@
     <example>Hadoop Administration</example>
     <param pos="0" name="service.vendor" value="Hadoop"/>
     <param pos="0" name="service.product" value="Hadoop Web Admin"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Namenode information$">
+    <description>Apache Hadoop</description>
+    <example>Namenode information</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Hadoop"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:hadoop:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Apache CloudStack$">
+    <description>Apache CloudStack</description>
+    <example>Apache CloudStack</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="ClouddStack"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:cloudstack:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Mesos$">
+    <description>Apache Mesos</description>
+    <example>Mesos</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Mesos"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:mesos:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Guacamole( Client)?( [\d.]+)?$">
+    <description>Apache Guacamole</description>
+    <example>Guacamole 0.8.3</example>
+    <example>Guacamole Client</example>
+    <example>Guacamole</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Guacamole"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:guacamole:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Storm UI$">
+    <description>Apache Storm</description>
+    <example>Storm UI</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Storm"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:storm:-"/>
+  </fingerprint>
+
+  <fingerprint pattern="^Kafka Manager$">
+    <description>Apache Kafka</description>
+    <example>Kafka Manager</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Kafka"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:kafka:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Apache Druid$">
+    <description>Apache Druid</description>
+    <example>Apache Druid</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Druid"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:druid:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Qpid Management$">
+    <description>Apache Qpid</description>
+    <example>Qpid Management</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Qpid"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:qpid:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Apache ShardingSphere.*$">
+    <description>Apache ShardingSphere</description>
+    <example>Apache ShardingSphere</example>
+    <example>Apache ShardingSphere ElasticJob UI</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="ShardingSphere"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:shardingsphere:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Apache Jackrabbit JCR Server$">
+    <description>Apache Jackrabbit</description>
+    <example>Apache Jackrabbit JCR Server</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Jackrabbit"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:jackrabbit:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Apache Isis.*$">
+    <description>Apache Isis</description>
+    <example>Apache Isis trade; SimpleApp</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Isis"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:isis:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^HBase.*Server:.*$">
+    <description>Apache HBase</description>
+    <example>HBase REST Server: 8000</example>
+    <example>HBase Thrift Server: 9090</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="HBase"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:hbase:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Spark Master at spark.*$">
+    <description>Apache Spark</description>
+    <example>Spark Master at spark://master:7077</example>
+    <example>Spark Master at spark://0.0.0.0:7077</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Spark"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:spark:-"/>
   </fingerprint>
 
   <fingerprint pattern="^ManageEngine OpManager$">
@@ -1690,6 +1950,19 @@
     <param pos="0" name="hw.vendor" value="Bosch"/>
     <param pos="0" name="os.device" value="Alarm Panel"/>
     <param pos="0" name="os.vendor" value="Bosch"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Citrix (Access )?Gateway$">
+    <description>Citrix Gateway</description>
+    <example>Citrix Gateway</example>
+    <example>Citrix Access Gateway</example>
+    <param pos="0" name="os.vendor" value="Citrix"/>
+    <param pos="0" name="os.product" value="Gateway"/>
+    <param pos="0" name="os.device" value="Network Management Device"/>
+    <param pos="0" name="service.vendor" value="Citrix"/>
+    <param pos="0" name="service.product" value="Gateway"/>
+    <param pos="0" name="service.device" value="Network Management Device"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:citrix:gateway:-"/>
   </fingerprint>
 
   <fingerprint pattern="^Citrix Login$">
@@ -2057,6 +2330,14 @@
     <param pos="0" name="service.product" value="ActiveMQ"/>
     <param pos="0" name="service.cpe23" value="cpe:/a:apache:activemq:-"/>
   </fingerprint>
+  
+  <fingerprint pattern="^Solr Admin$">
+    <description>Apache Solr</description>
+    <example>Solr Admin</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Solr"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:solr:-"/>
+  </fingerprint>
 
   <fingerprint pattern="^Google Wifi$">
     <description>Google OnHub Router</description>
@@ -2286,6 +2567,14 @@
     <param pos="0" name="service.product" value="Flink"/>
     <param pos="0" name="service.cpe23" value="cpe:/a:apache:flink:-"/>
   </fingerprint>
+  
+  <fingerprint pattern="^Apache Geronimo$">
+    <description>Apache Geronimo</description>
+    <example>Apache Geronimo</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Geronimo"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:geronimo:-"/>
+  </fingerprint>
 
   <fingerprint pattern="^(?:Twonky|Twonky Server|TwonkyMedia|TwonkyMedia server media browser)$">
     <description>Twonky Server</description>
@@ -2386,6 +2675,14 @@
     <example>Airflow - Login</example>
     <param pos="0" name="service.vendor" value="Apache"/>
     <param pos="0" name="service.product" value="Airflow"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:apache:airflow:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Ambari$">
+    <description>Apache Ambari</description>
+    <example>Ambari</example>
+    <param pos="0" name="service.vendor" value="Apache"/>
+    <param pos="0" name="service.product" value="Ambari"/>
     <param pos="0" name="service.cpe23" value="cpe:/a:apache:airflow:-"/>
   </fingerprint>
 
@@ -2679,6 +2976,14 @@
     <param pos="0" name="service.cpe23" value="cpe:/a:atlassian:confluence:-"/>
   </fingerprint>
 
+  <fingerprint pattern="^Rancher$">
+    <description>Rancher</description>
+    <example>Rancher</example>
+    <param pos="0" name="service.vendor" value="Rancher"/>
+    <param pos="0" name="service.product" value="Rancher"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:rancher:rancher:-"/>
+  </fingerprint>
+
   <fingerprint pattern="^System Dashboard - ">
     <description>Atlassian Jira</description>
     <example>System Dashboard - Jira</example>
@@ -2750,6 +3055,20 @@
     <param pos="0" name="service.product" value="Dashboard"/>
   </fingerprint>
 
+  <fingerprint pattern="^Kubecost$">
+    <description>Kubecost</description>
+    <example>Kubecost</example>
+    <param pos="0" name="service.vendor" value="Kubecost"/>
+    <param pos="0" name="service.product" value="Kubecost"/>
+  </fingerprint>
+
+  <fingerprint pattern="^Vault$">
+    <description>HashiCorp Vault</description>
+    <example>Vault</example>
+    <param pos="0" name="service.product" value="Vault"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:hashicorp:vault:-"/>
+  </fingerprint>
+
   <fingerprint pattern="^SoundTouch Access Point Setup$">
     <description>Bose SoundTouch</description>
     <example>SoundTouch Access Point Setup</example>
@@ -2774,9 +3093,44 @@
     <param pos="0" name="os .certainty" value="0.75"/>
   </fingerprint>
 
-  <fingerprint pattern="^Pulse Connect Secure - SSL">
+  <fingerprint pattern="(ZyWALL USG.*?)$">
+    <description>Zyxel ZyWALL Unified Security Gateway</description>
+    <example hw.product="ZyWALL USG 50">ZyWALL USG 50</example>
+    <example hw.product="ZyWALL USG100-PLUS">ZyWALL USG100-PLUS</example>
+    <example hw.product="ZyWALL USG 20W">ZyWALL USG 20W</example>
+    <param pos="0" name="hw.vendor" value="Zyxel"/>
+    <param pos="1" name="hw.product"/>
+  </fingerprint>
+  
+  <fingerprint pattern="(ZyWALL .*? Internet Security Appliance)$">
+    <description>Zyxel ZyWALL Internet Security Appliance</description>
+    <example hw.product="ZyWALL 5 Internet Security Appliance">10.0.0.1 - ZyXEL ZyWALL 5 Internet Security Appliance</example>
+    <example hw.product="ZyWALL 2 Plus Internet Security Appliance">10.0.0.1 - ZyXEL ZyWALL 2 Plus Internet Security Appliance</example>
+    <param pos="0" name="hw.vendor" value="Zyxel"/>
+    <param pos="1" name="hw.product"/>
+  </fingerprint>
+ 
+  <fingerprint pattern="\.::.*ZyXEL ([\S]+)::\.$">
+    <description>Zyxel Router</description>
+    <example hw.product="EMG2926">.::Bienvenue sur ZyXEL EMG2926::.</example>
+    <example hw.product="P-660HN-51">.::Welcome to ZyXEL P-660HN-51::.</example>
+    <param pos="0" name="hw.vendor" value="Zyxel"/>
+    <param pos="1" name="hw.product"/>
+  </fingerprint>
+ 
+  <fingerprint pattern="(ZyWALL [\d]+)$">
+    <description>Zyxel ZyWALL Firewall</description>
+    <example hw.product="ZyWALL 310">ZyWALL 310</example>
+    <example hw.product="ZyWALL 1100">Z ZyWALL 1100</example>
+    <param pos="0" name="hw.vendor" value="Zyxel"/>
+    <param pos="1" name="hw.product"/>
+  </fingerprint>
+
+  <fingerprint pattern="^Pulse Connect Secure">
     <description>Pulse Secure VPN</description>
+    <example>Pulse Connect Secure</example>
     <example>Pulse Connect Secure - SSL</example>
+    <example>Pulse Connect Secure - PleaseWait</example>
     <param pos="0" name="service.vendor" value="Pulse Secure"/>
     <param pos="0" name="service.product" value="Pulse Connect Secure"/>
     <param pos="0" name="service.cpe23" value="cpe:/a:pulsesecure:pulse_connect_secure:-"/>
@@ -2784,6 +3138,39 @@
     <param pos="0" name="os.family" value="SSL-VPN"/>
     <param pos="0" name="os.device" value="SSL-VPN"/>
     <param pos="0" name="os.product" value="Pulse Connect Secure"/>
+  </fingerprint>
+  
+  <fingerprint pattern="Pulse Secure Access Service">
+    <description>Junos Pulse Secure VPN</description>
+    <example>Junos Pulse Secure Access Service</example>
+    <example>Junos Pulse Secure Access Service - PleaseWait</example>
+    <param pos="0" name="service.vendor" value="Juniper"/>
+    <param pos="0" name="service.product" value="Pulse Secure Access Service"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:juniper:pulse_secure_access_service:-"/>
+    <param pos="0" name="os.vendor" value="Juniper"/>
+    <param pos="0" name="os.product" value="IVE OS"/>
+    <param pos="0" name="os.device" value="SSL-VPN"/>
+    <param pos="0" name="os.cpe23" value="cpe:/o:juniper:ive_os:-"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^GlobalProtect Portal$">
+    <description>GlobalProtect VPN</description>
+    <example>GlobalProtect Portal</example>
+    <param pos="0" name="service.vendor" value="Palo Alto Networks"/>
+    <param pos="0" name="service.product" value="GlobalProtect"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:paloaltonetworks:globalprotect:-"/>
+    <param pos="0" name="os.vendor" value="Palo Alto Networks"/>
+    <param pos="0" name="os.family" value="VPN"/>
+    <param pos="0" name="os.device" value="VPN"/>
+    <param pos="0" name="os.product" value="PAN-OS"/>
+  </fingerprint>
+  
+  <fingerprint pattern="^Prisma Cloud$">
+    <description>Prisma Cloud</description>
+    <example>Prisma Cloud</example>
+    <param pos="0" name="service.vendor" value="Palo Alto Networks"/>
+    <param pos="0" name="service.product" value="Prisma Cloud"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:paloaltonetworks:prisma_cloud:-"/>
   </fingerprint>
 
   <fingerprint pattern="^Jellyfin$">
@@ -2912,5 +3299,4 @@
     <param pos="0" name="service.product" value="Metabase"/>
     <param pos="0" name="service.cpe23" value="cpe:/a:metabase:metabase:-"/>
   </fingerprint>
-
 </fingerprints>

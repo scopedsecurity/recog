@@ -1066,6 +1066,18 @@
     <param pos="0" name="os.family" value="SonicOS"/>
     <param pos="0" name="os.certainty" value="0.5"/>
   </fingerprint>
+  
+  <fingerprint pattern="^e462005902f81094ab3de44e4381de19$">
+    <description>Fortinet FortiGate</description>
+    <example>e462005902f81094ab3de44e4381de19</example>
+    <param pos="0" name="service.vendor" value="Fortinet"/>
+    <param pos="0" name="service.product" value="FortiGate"/>
+    <param pos="0" name="service.cpe23" value="cpe:/a:fortinet:fortigate:-"/>
+    <param pos="0" name="os.vendor" value="Fortinet"/>
+    <param pos="0" name="os.device" value="VPN"/>
+    <param pos="0" name="os.family" value="FortiOS"/>
+    <param pos="0" name="os.cpe23" value="cpe:/o:fortinet:fortios:-"/>
+  </fingerprint>
 
   <fingerprint pattern="^e4fd990b4b8a5d61bd5ddb98cdfc7190$">
     <description>OPNsense Firewall</description>
